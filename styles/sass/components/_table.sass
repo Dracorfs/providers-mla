@@ -15,44 +15,6 @@
         justify-content: center
         flex-direction: column
         backdrop-filter: blur(20px)
-        table
-            overflow-y:scroll
-            max-height:50vh
-            display:block
-            border-collapse: collapse
-            background-color: $shady-black
-            letter-spacing: 1px
-            font-size: 0.8rem
-            border-radius: 1em
-            th
-                border-radius: 1em
-                color: $mail-green
-                background-color: $shady-black
-            td
-                border-top: 1px solid $pale-grey
-                text-align: center
-            td.state-Entered
-                color: $pale-grey
-            td.state-Control
-                color: yellow
-            td.state-Canceled
-                color: $fast-red
-            td.state-Paid
-                color: $mail-green
-            th,td
-                padding: 1em
-                &:first-child
-                    width: 4vw
-                &:nth-child(2n)
-                    width: 4vw
-                width:15vw
-                @import "./checkbox"
-                @import "./expandbutton"
-            tr:hover
-                background-color: lighten($shady-black, 4%)
-                color: $mail-green
-            &::-webkit-scrollbar
-                background-color: transparent
         section
             display: flex
             justify-content: flex-end
@@ -67,7 +29,7 @@
                 font-weight: bold
                 margin: 1.5em 1em 0 0
                 padding: 1em 2em
-                i
+                span
                     margin-right: 0.5em
                 &:hover
                     color: $mail-green

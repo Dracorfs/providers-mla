@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Providers MLA</title>
+    <link href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
     <link href="./styles/css/index.min.css" rel="stylesheet" />
 </head>
@@ -23,38 +24,37 @@
           <span class="actual-text">BALANCE: </span>
           <span class="hover-text">BALANCE: </span>
           <span class="number">
-            ${ usuario ? parseInt((usuario.address).zipcode) : 0 }
+            4444
           </span>
         </div>
         <menu class="header__menu">
           <p>
-            { usuario ? usuario.name : "" } <i class="fi fi-sr-user"/>
+            Jhon Doe <span class="fi fi-sr-user"/>
           </p>
           <label>
-            <a>Logout <i class="fi fi-br-sign-out-alt" /></a>
+            <a href="/">Logout <span class="fi fi-br-sign-out-alt" /></a>
           </label>
         </menu>
     </header>
-    <main>
+    <main class="table">
         <div class="table__container">
-            <div class="table" id="table"></div>
+            <div id="table"></div>
             <section>
                 <a href="#createinvoice">
                     <button>
-                        <i class="fi fi-br-add"/>
+                        <span class="fi fi-br-add"/>
                         New invoice
                     </button>
                 </a>
                 <a href='#'>
                     <button>
-                        <i class="fi fi-br-refresh"/>
+                        <span class="fi fi-br-refresh"/>
                         Refresh
                     </button>
                 </a>
             </section>
         </div>
     </main>
-    
     <footer class="footer">
         <p>MailAmericas © Copyright 2022. All Rights Reserved.</p>
         <div class="container">
@@ -63,14 +63,14 @@
                 class="social-link contactus"
                 target="_blank"
             >
-                <i class="fi fi-br-info"/>
+                <span class="fi fi-br-info"/>
                 Terms of use and Privacy Policy
             </a>
             <a
                 href="#contactus"
                 class="social-link contactus"
             >
-                <i class="fi fi-br-comment"/>
+                <span class="fi fi-br-comment"/>
                 Contact us
             </a>
             <a
@@ -78,14 +78,14 @@
                 class="social-link"
                 target="_blank"
             >
-                <i class="fi fi-ss-globe" />
+                <span class="fi fi-ss-globe" />
             </a>
             <a
                 href="https://www.linkedin.com/company/mailamericas-mailatinamerica/mycompany/"
                 class="social-link"
                 target="_blank"
             >
-                <i class="fi fi-brands-linkedin" />
+                <span class="fi fi-brands-linkedin" />
             </a>
         </div>
     </footer>
@@ -170,7 +170,7 @@
                             />
                             <label htmlFor="invoice_file">
                                 <p>Upload Invoice</p>
-                                <i class="fi fi-br-upload"/>
+                                <span class="fi fi-br-upload"/>
                             </label>
                         </div>
                         <div class="controls upload-button">
@@ -180,7 +180,7 @@
                             />
                             <label htmlFor="detail_file">
                                 <p>Upload Detail</p>
-                                <i class="fi fi-br-upload"/>
+                                <span class="fi fi-br-upload"/>
                             </label>
                         </div>
                     </div>
