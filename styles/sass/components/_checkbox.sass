@@ -1,0 +1,52 @@
+.checkbox__container
+    display: block
+    position: relative
+    cursor: pointer
+    font-size: 20px
+    user-select: none
+    input
+        /* Hide the default checkbox */
+        position: absolute
+        opacity: 0
+        cursor: pointer
+        height: 0
+        width: 0
+    .checkmark
+        /* Create a custom checkbox */
+        position: relative
+        top: 0
+        left: 0
+        height: 1.1em
+        width: 1.1em
+        background-color: $pale-grey
+        transition: all 0.3s
+        border-radius: 5px
+        /* Create the checkmark/indicator (hidden when not checked) */
+        &:after
+            content: ""
+            position: absolute
+            display: none
+
+            /* Style the checkmark/indicator */
+            left: 0.45em
+            top: 0.25em
+            width: 0.25em
+            height: 0.5em
+            border: solid $pale-grey
+            border-width: 0 0.15em 0.15em 0
+            transform: rotate(45deg)
+    /* When the checkbox is checked, add a green background */
+    input:checked ~ .checkmark
+        background-color: $mail-green
+        animation: pop 0.5s
+        animation-direction: alternate
+    /* Show the checkmark when checked */
+    input:checked ~ .checkmark:after
+        display: block
+    @keyframes pop
+        0%
+            transform: scale(1)
+        50%
+            transform: scale(0.9)
+        100%
+            transform: scale(1)

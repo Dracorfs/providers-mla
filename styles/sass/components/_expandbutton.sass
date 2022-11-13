@@ -1,0 +1,51 @@
+.expand-button
+    display: inline-block
+    position: relative
+    padding: 1em .5em
+    cursor: pointer
+    user-select: none
+    opacity: 0.8
+    input
+        /* Hide the default checkbox */
+        position: absolute
+        opacity: 0
+        cursor: pointer
+        height: 0
+        width: 0
+    &:hover .navicon:before
+        // Below line
+        top: .8em
+    &:hover .navicon:after
+        // Upper line
+        top: -.8em
+    
+    .navicon
+        position: relative
+        width: 2em
+        height: .25em
+        background: $mail-green
+        border-radius: 1em
+        &:before, &:after
+            display: block
+            content: ""
+            width: 2em
+            height: .25em
+            background: $mail-green
+            position: absolute
+            z-index: -1
+            border-radius: 1em
+            transition: .25s
+        &:before
+            // Below line
+            top: .6em
+        &:after
+            // Upper line
+            top: -.6em
+    
+    /* Minus */
+    input:checked ~ .navicon:before,
+    input:checked ~ .navicon:after,
+    input:checked ~ .navicon
+        transition: .5s
+        top: 0 !important
+        transform: scale(.75)

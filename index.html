@@ -4,12 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GridJS</title>
+    <title>Providers MLA</title>
     <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <link href="./styles/css/index.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="table"></div>
-    
+    <header className='home__header'>
+        <a href='/'>
+            <img
+                src='logo'
+                className="header__logo"
+                alt="MailAmericas logo"
+                width=166.8
+                height=45.6
+            />
+        </a>
+        <div className="account-balance">
+          <span className="actual-text">BALANCE: </span>
+          <span className="hover-text">BALANCE: </span>
+          <span className="number">
+            ${ usuario ? parseInt((usuario.address).zipcode) : 0 }
+          </span>
+        </div>
+        <menu className="header__menu">
+          <p>
+            { usuario ? usuario.name : "" } <i className="fi fi-sr-user"/>
+          </p>
+          <label>
+            <a>Logout <i className="fi fi-br-sign-out-alt" /></a>
+          </label>
+        </menu>
+    </header>
+    <main>
+        <div className="table" id="table"></div>
+    </main>
+    <footer className="footer">
+        <p>MailAmericas © Copyright 2022. All Rights Reserved.</p>
+        <div className="container">
+            <a
+                href="https://mailamericas.com/en/terms-of-use-and-privacy-policy"
+                className="social-link contactus"
+                target="_blank"
+            >
+                <i className="fi fi-br-info"/>
+                Terms of use and Privacy Policy
+            </a>
+            <a
+                href="#contactus"
+                className="social-link contactus"
+            >
+                <i className="fi fi-br-comment"/>
+                Contact us
+            </a>
+            <a
+                href="https://mailamericas.com/en/"
+                className="social-link"
+                target="_blank"
+            >
+                <i className="fi fi-ss-globe" />
+            </a>
+            <a
+                href="https://www.linkedin.com/company/mailamericas-mailatinamerica/mycompany/"
+                className="social-link"
+                target="_blank"
+            >
+                <i className="fi fi-brands-linkedin" />
+            </a>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
     <script src="script.js"></script>
 </body>

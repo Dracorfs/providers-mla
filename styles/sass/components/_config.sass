@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css')
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css')
+@import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css')
+@import url('https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css')
+
+*,
+*::before,
+*::after
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    margin: 0
+    font-family: 'Roboto', sans-serif
+    color: $pale-grey
+    background-color: $shady-black
+    background-image: url("https://images.unsplash.com/photo-1571086291540-b137111fa1c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4000")
+    background-position: center
+    background-attachment: fixed
+    background-repeat: no-repeat
+    background-size: cover
+
+h1, h2, h3
+    font: bold
+    color: $mail-green
+    @media (max-width: 992px)
+        font-size: 2.0rem
+
+button
+    outline: none
+
+a
+    color: $pale-grey
+
+::-webkit-scrollbar
+    width: 12px
+    background-color: $shady-black
+::-webkit-scrollbar-thumb
+    border-radius: 1em
+    background-color: $mail-green
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3)

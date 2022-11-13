@@ -1,0 +1,31 @@
+.footer
+    position: fixed
+    bottom:0
+    width:100%
+    color: darken($pale-grey, 25%)
+    display: flex
+    align-items: center
+    background-color: $shady-black
+    padding: .4em
+    font-size: .9em
+    p
+        margin-left: 2em
+    .container
+        width: 30em
+        margin: auto
+        margin-right: 2em
+        display: flex
+        align-items: center
+        justify-content: space-around
+        .social-link
+            transition: all .5s
+            border-radius: .5em
+            padding: .5em .5em .2em .5em
+            text-decoration: none
+            &:hover
+                background: lighten($shady-black, 4%)
+                i
+                    transform: scale(1.5)
+        .contactus
+            i
+                margin-right: 0.4em

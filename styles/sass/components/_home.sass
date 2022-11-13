@@ -1,0 +1,64 @@
+.home__header
+    width: 100%
+    height: 3.75em
+    background-color: $shady-black
+    color: $pale-grey
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 0.5em 2em
+    .header__logo
+        outline: none
+        width: 200px
+    .header__menu
+        transition: all .5s
+        &:hover
+            color: $mail-green
+        label
+            z-index: 1
+            background: $shady-black
+            display: block
+            list-style: none
+            position: absolute
+            width: inherit
+            text-align: right
+            padding: 1.5em 1.5em 1em 1.5em
+            border-radius: 1em
+            opacity: 0
+            transition: all .2s
+            a
+                color: $pale-grey
+                text-decoration: none
+                transition: all .4s
+                &:hover
+                    color: $fast-red
+        &:hover label, label:hover
+            opacity: 1
+    .account-balance
+        letter-spacing: 3px
+        text-decoration: none
+        position: relative
+        text-transform: uppercase
+        color: $pale-grey
+        font-weight: bold
+        padding: 0 0.5em
+        .hover-text
+            position: absolute
+            box-sizing: border-box
+            color: $mail-green
+            border-right: 6px solid $mail-green
+            width: 0%
+            inset: 0
+            overflow: hidden
+            transition: 1s
+            opacity: 0
+            padding: 0 0.5em
+
+        &:hover .hover-text
+            opacity: 1
+            width: 100%
+            filter: drop-shadow(0 0 23px $mail-green)
+
+        .number
+            color: $mail-green
+            letter-spacing: 1px

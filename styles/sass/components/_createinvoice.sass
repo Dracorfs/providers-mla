@@ -1,0 +1,153 @@
+.create-invoice-popup
+    padding: 3em
+    //backdrop-filter: blur(20px)
+    //background-color: rgba(255, 255, 255, 0.1)
+    background-color: $shady-black
+    border-radius: 1em
+    width: 70vw
+    box-shadow: 0 0 50px rgba(0,0,0,0.5)
+    position: relative
+    h1,h2
+        margin-top: 0
+        margin-bottom: 1em
+    .close
+        position: absolute
+        width: 1em
+        height: 1em
+        top: 0.7em
+        right: 0.7em
+        opacity: 0.8
+        transition: all .2s
+        font-size: 2em
+        font-weight: bold
+        text-decoration: none
+        color: $mail-green
+        &:hover
+            color: $fast-red
+    form.create-invoice
+        .controls
+            input[type="text"],
+            input[type="email"],
+            input[type="number"],
+            input[type="currency"],
+            input[type="date"],
+            input[type="amount"]
+                color: $pale-grey
+                font-size: 1em
+                background-color: transparent
+                border: 0
+                border-bottom: 2px solid $pale-grey
+                padding: 1em
+                &:focus, &:hover
+                    outline: none
+                /* Placeholder */
+                &::placeholder
+                    /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: $pale-grey
+
+                    /* Firefox */
+                    opacity: 1
+                &:-ms-input-placeholder
+                    /* Internet Explorer 10-11 */
+                    color: $pale-grey
+                &::-ms-input-placeholder
+                    /* Microsoft Edge */
+                    color: $pale-grey
+            
+        section.data
+            display: flex
+            margin-bottom: 2em
+            justify-content: space-around
+            width: 100%
+            select
+                font-weight: bold
+                margin-top: 0.5em
+                padding: 1em
+                color: $pale-grey
+                cursor: pointer
+                position: relative
+                background-color: transparent
+                border: 0
+                border-radius: 1em 1em 0 0
+                border-bottom: 2px solid $pale-grey
+                &:focus, &:hover
+                    outline: none
+                    color: $pale-grey
+                    background-color: $shady-black
+                    border-radius: 1em 1em 0 0
+            input[type="text"],
+            input[type="number"],
+            input[type="amount"]
+                font-size: 1em
+                width: 7em
+            input[type="date"]
+                cursor: tex
+                
+                margin-top: .45em // fix odd appearance
+                &::-webkit-datetime-edit-text
+                    color: $mail-green
+                &::-webkit-datetime-edit-month-field
+                    color: $pale-grey
+                &::-webkit-datetime-edit-day-field
+                    color: $pale-grey
+                &::-webkit-datetime-edit-year-field
+                    color: $pale-grey
+                &::-webkit-inner-spin-button
+                    display: none
+                &::-webkit-calendar-picker-indicator
+                    cursor: pointer
+                    background-image: url("https://img.icons8.com/ios-filled/344/calendar--v1.png")
+                    filter: invert(84%) sepia(1%) saturate(5794%) hue-rotate(345deg) brightness(125%) contrast(131%) // converts black to white
+        section.upload
+            margin-bottom: 2em
+            .button-group
+                display: flex
+                justify-content: space-around
+                width: 50%
+                .upload-button
+                    input
+                        display: none
+                    label
+                        p
+                            margin-right: 0.5em
+                        width: auto
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        background-color: transparent
+                        border-radius: 2em
+                        border: 2px solid $pale-grey
+                        cursor: pointer
+                        font-size: 0.8em
+                        font-weight: bold
+                        letter-spacing: 1px
+                        backdrop-filter: blur(15px)
+                        padding: 1em 2.5em
+
+                        transition: all .5s
+                        &:hover
+                            background-color: $mail-green
+                            color: $shady-black
+                            border: 2px solid $mail-green
+        section.submit
+            display: flex
+            justify-content: center
+            align-items: center
+            button
+                display: flex
+                align-items: center
+                background-color: transparent
+                border-radius: 2em
+                border: 2px solid $mail-green
+                color: $mail-green
+                cursor: pointer
+                font-size: 1em
+                font-weight: bold
+                height: 3em
+                letter-spacing: 1px
+                backdrop-filter: blur(15px)
+                padding: 1em 2.5em
+                transition: all .5s
+                &:hover
+                    background-color: $mail-green
+                    color: $shady-black
