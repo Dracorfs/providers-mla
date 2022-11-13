@@ -21,4 +21,8 @@ new gridjs.Grid({
             [movie.title, movie.director, movie.producer]
         )
     },
+    className: {
+        table: 'table',
+        th: 'th',
+    }
 }).render(document.getElementById("table"));

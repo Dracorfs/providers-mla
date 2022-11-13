@@ -1,4 +1,4 @@
-.table
+main
     display: flex
     align-items: center
     flex-direction: column
@@ -15,6 +15,44 @@
         justify-content: center
         flex-direction: column
         backdrop-filter: blur(20px)
+        .table
+            width: 100%
+            max-height:50vh
+            border-collapse: collapse
+            background-color: $shady-black
+            letter-spacing: 1px
+            font-size: 0.8rem
+            border-radius: 1em
+            th
+                text-align: center
+                border-radius: 1em
+                color: $mail-green
+                background-color: $shady-black
+            td
+                color: $pale-grey
+                border-top: 1px solid $pale-grey
+                text-align: center
+            td.state-Entered
+                color: $pale-grey
+            td.state-Control
+                color: yellow
+            td.state-Canceled
+                color: $fast-red
+            td.state-Paid
+                color: $mail-green
+            th,td
+                background-color: $shady-black
+                padding: 1em
+                &:first-child
+                    width: 4vw
+                &:nth-child(2n)
+                    width: 4vw
+                width:15vw
+            tr:hover
+                background-color: lighten($shady-black, 4%)
+                color: $mail-green
+            &::-webkit-scrollbar
+                background-color: transparents
         section
             display: flex
             justify-content: flex-end
