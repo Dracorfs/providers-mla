@@ -9,70 +9,188 @@
     <link href="./styles/css/index.min.css" rel="stylesheet" />
 </head>
 <body>
-    <header className='home__header'>
+    <header class='home__header'>
         <a href='/'>
             <img
                 src='logo'
-                className="header__logo"
+                class="header__logo"
                 alt="MailAmericas logo"
                 width=166.8
                 height=45.6
             />
         </a>
-        <div className="account-balance">
-          <span className="actual-text">BALANCE: </span>
-          <span className="hover-text">BALANCE: </span>
-          <span className="number">
+        <div class="account-balance">
+          <span class="actual-text">BALANCE: </span>
+          <span class="hover-text">BALANCE: </span>
+          <span class="number">
             ${ usuario ? parseInt((usuario.address).zipcode) : 0 }
           </span>
         </div>
-        <menu className="header__menu">
+        <menu class="header__menu">
           <p>
-            { usuario ? usuario.name : "" } <i className="fi fi-sr-user"/>
+            { usuario ? usuario.name : "" } <i class="fi fi-sr-user"/>
           </p>
           <label>
-            <a>Logout <i className="fi fi-br-sign-out-alt" /></a>
+            <a>Logout <i class="fi fi-br-sign-out-alt" /></a>
           </label>
         </menu>
     </header>
     <main>
-        <div className="table" id="table"></div>
+        <div class="table__container">
+            <div class="table" id="table"></div>
+            <section>
+                <a href="#createinvoice">
+                    <button>
+                        <i class="fi fi-br-add"/>
+                        New invoice
+                    </button>
+                </a>
+                <a href='#'>
+                    <button>
+                        <i class="fi fi-br-refresh"/>
+                        Refresh
+                    </button>
+                </a>
+            </section>
+        </div>
     </main>
-    <footer className="footer">
+    
+    <footer class="footer">
         <p>MailAmericas © Copyright 2022. All Rights Reserved.</p>
-        <div className="container">
+        <div class="container">
             <a
                 href="https://mailamericas.com/en/terms-of-use-and-privacy-policy"
-                className="social-link contactus"
+                class="social-link contactus"
                 target="_blank"
             >
-                <i className="fi fi-br-info"/>
+                <i class="fi fi-br-info"/>
                 Terms of use and Privacy Policy
             </a>
             <a
                 href="#contactus"
-                className="social-link contactus"
+                class="social-link contactus"
             >
-                <i className="fi fi-br-comment"/>
+                <i class="fi fi-br-comment"/>
                 Contact us
             </a>
             <a
                 href="https://mailamericas.com/en/"
-                className="social-link"
+                class="social-link"
                 target="_blank"
             >
-                <i className="fi fi-ss-globe" />
+                <i class="fi fi-ss-globe" />
             </a>
             <a
                 href="https://www.linkedin.com/company/mailamericas-mailatinamerica/mycompany/"
-                className="social-link"
+                class="social-link"
                 target="_blank"
             >
-                <i className="fi fi-brands-linkedin" />
+                <i class="fi fi-brands-linkedin" />
             </a>
         </div>
     </footer>
-
+    <div id="contactus" class="overlay">
+        <div class="contact-us-popup">
+            <h1>Get in contact with us!</h1>
+            <p>sistemasadm@mailamericas.com</p>
+            <a class="close" href="#">
+                <button>OK</button>
+            </a>
+        </div>
+    </div>
+    <div id="createinvoice" class="overlay">
+        <div class="create-invoice-popup">
+            <h1>New invoice</h1>
+            <a class="close" href="#">&times;</a>
+            <form action="http://localhost:3001/api/createinvoice" method="POST" class="create-invoice">
+                <section class="data">
+                    <div class="controls">
+                        <h3>Number</h3>
+                        <input
+                            type="text"
+                            id="invoice_number"
+                            placeholder="0"
+                            name="NUMERO"
+                            required
+                            maxLength={20}
+                        />
+                    </div>
+                    <div class="controls">
+                        <h3>Amount</h3>
+                        <input
+                            type="number"
+                            id="invoice_amount"
+                            placeholder="0"
+                            name="NUMERO"
+                            required
+                            min="1" max="10000"
+                        />
+                    </div>
+                    <div class="controls">
+                        <h3>Currency</h3>
+                        <select defaultValue='USD'>
+                            <option value="1">USD</option>
+                            <option value="2">ARS</option>
+                        </select>
+                    </div>
+                    <div class="controls">
+                        <h3>Service month</h3>
+                        <select defaultValue='This month'>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                    <div class="controls">
+                        <h3>Issue date</h3>
+                        <input
+                            type="date"
+                            id="issue_date"
+                            placeholder="Issue date"
+                            name="FECHA_EMISION"
+                            required
+                        />
+                    </div>
+                </section>
+                <section class="upload">
+                    <div class="button-group">
+                        <div class="controls upload-button">
+                            <input
+                                type="file"
+                                id="invoice_file"
+                            />
+                            <label htmlFor="invoice_file">
+                                <p>Upload Invoice</p>
+                                <i class="fi fi-br-upload"/>
+                            </label>
+                        </div>
+                        <div class="controls upload-button">
+                            <input
+                                type="file"
+                                id="detail_file"
+                            />
+                            <label htmlFor="detail_file">
+                                <p>Upload Detail</p>
+                                <i class="fi fi-br-upload"/>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                <section class="submit">
+                    <button type="submit">Create invoice</button>
+                </section>
+            </form>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
     <script src="script.js"></script>
 </body>
